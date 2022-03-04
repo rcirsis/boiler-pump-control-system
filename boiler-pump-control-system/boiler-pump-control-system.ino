@@ -1,7 +1,7 @@
 	#include <OneWire.h>
 	#include <DallasTemperature.h>
 	#include <Arduino.h>
-  #include "credentials.h" // holds wifi points names and their passwords, server address where data will be posted
+	#include "credentials.h" // holds wifi points names and their passwords, server address where data will be posted
   
 	#include <Ticker.h>
 	Ticker Timer1;
@@ -17,8 +17,8 @@
 	char link[1000];
 
 	#include <ModbusRTU.h>
-  #include <SoftwareSerial.h>
-  ModbusRTU mb;
+	#include <SoftwareSerial.h>
+	ModbusRTU mb;
 	int DE_RE = 16; // D0  For MAX485 chip direction control
 	int R0 = 12; 	// D6
 	int DI = 13; 	// D7
@@ -85,9 +85,9 @@
 		// === ENABLE WIFI  ===
 		Serial.println("Connecting to WIFI");
 		WiFi.mode(WIFI_STA);
-    for(int i = 0; i < sizeof(wifi_data); i++) {
-      WiFiMulti.addAP(wifi_data[i][0], wifi_data[i][1]);
-    }
+		for(int i = 0; i < sizeof(wifi_data); i++) {
+		WiFiMulti.addAP(wifi_data[i][0], wifi_data[i][1]);
+		}
 		WiFiMulti.run();
 		delay(500);
 
